@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#363636"
+    tools:context="com.example.ednaldojunior89.resoftsystemas.Main2Activity_cardapio">
+
+    <Button
+        android:id="@+id/bt_sobremesas"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_green_light"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:drawableRight="@drawable/sobremesas"
+        android:paddingLeft="60dp"
+        android:paddingRight="20dp"
+        android:text="Sobremesas"
+        android:textColor="#ffffffff"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.862" />
+
+    <Button
+        android:id="@+id/bt_bebidas"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_green_light"
+        android:drawableRight="@drawable/bebida"
+        android:paddingLeft="40dp"
+        android:paddingRight="20dp"
+        android:text="Bebidas"
+        android:textColor="#ffffffff"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Button
+        android:id="@+id/bt_praros"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_orange_light"
+        android:drawableRight="@drawable/prato"
+        android:paddingLeft="60dp"
+        android:paddingRight="20dp"
+        android:text="Pratos"
+        android:textColor="#ffffffff"
+        android:textSize="22dp"
+        android:onClick="chama_pratos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="183dp"
+        android:layout_height="125dp"
+        app:srcCompat="@drawable/prato7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="181dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/prato1"
+        tools:layout_editor_absoluteX="179dp" />
+</android.support.constraint.ConstraintLayout>
