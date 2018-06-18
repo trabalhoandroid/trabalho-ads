@@ -12,11 +12,13 @@ public class Contato_comanda extends Main2Activity_cardapio {
     private String telefonne;
 
 
+
     public Contato_comanda(String nome, String telefone) {
 
 
         this.nome = nome;
         this.telefonne = telefone;
+
 
     }
 
@@ -36,5 +38,6 @@ public class Contato_comanda extends Main2Activity_cardapio {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 }
 

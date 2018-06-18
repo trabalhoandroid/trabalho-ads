@@ -1,5 +1,6 @@
 package com.example.ednaldojunior89.resoftsystemas;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,11 @@ public class AdapterListViewComanda extends BaseAdapter
 
     public View getView(int position, View view, ViewGroup parent)
     {
+
+
+
+
+
         //Pega o item de acordo com a posção.
         Contato_comanda item = itens.get(position);
 
@@ -68,6 +74,11 @@ public class AdapterListViewComanda extends BaseAdapter
         ((TextView) view.findViewById(R.id.tvNome)).setText(item.getNome());
         ((TextView) view.findViewById(R.id.tvTelefone)).setText(item.getTelefonne());
 
+        if (position % 2 == 1) {
+            view.setBackgroundColor( Color.rgb( 238, 221, 130 ));
+        } else {
+            view.setBackgroundColor(Color.rgb( 238, 201, 0 ));
+        }
 
         return view;
     }

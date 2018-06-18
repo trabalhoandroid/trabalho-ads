@@ -20,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
+        app:layout_constraintVertical_bias="0.921" />
 
     <TextView
         android:id="@+id/text_nome"
@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/edt_email"
-        android:layout_width="320dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
         android:background="#FFC125"
         android:ems="10"
@@ -66,16 +66,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.563"/>
 
     <EditText
         android:id="@+id/edt_senha"
-        android:layout_width="320dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
         android:background="#FFC125"
         android:ems="10"
         android:hint="SENHA"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:text=""
         android:textColor="#FFF"
@@ -84,11 +84,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.696"/>
 
     <Button
         android:id="@+id/bt_chama_mesas"
-        android:layout_width="328dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:backgroundTint="?android:attr/colorFocusedHighlight"
         android:text="LOGIN"
@@ -97,14 +97,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
+        app:layout_constraintVertical_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="365dp"
+        android:layout_width="344dp"
         android:layout_height="203dp"
         app:srcCompat="@drawable/pratos"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="3dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="3dp"/>
 
 </android.support.constraint.ConstraintLayout>

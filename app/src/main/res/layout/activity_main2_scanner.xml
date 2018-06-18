@@ -9,17 +9,17 @@
 
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/chama_comanda1"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@android:color/holo_green_light"
         android:drawableRight="@drawable/prato"
+        android:onClick="chamacomanda"
         android:paddingLeft="60dp"
         android:paddingRight="20dp"
         android:text="Meu Pedido"
         android:textColor="#ffffffff"
         android:textSize="22dp"
-        android:onClick="chamacomanda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -59,7 +59,7 @@
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="352dp"
+        android:layout_width="0dp"
         android:layout_height="217dp"
         android:autofillHints="@color/zxing_possible_result_points"
         android:background="@color/zxing_status_text"
@@ -76,14 +76,25 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="356dp"
+        android:layout_width="0dp"
         android:layout_height="164dp"
         android:background="@drawable/fahcada_almoco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
-        />
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319"/>
 
 </android.support.constraint.ConstraintLayout>

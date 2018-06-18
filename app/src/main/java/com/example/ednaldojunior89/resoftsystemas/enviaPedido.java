@@ -19,8 +19,8 @@ import java.net.URLEncoder;
 
 public class enviaPedido  extends AsyncTask<String, Void, String>{
 
-
-
+    String ss;
+    String email_login_1;
     private Context context;
 
     public enviaPedido(Context context) {
@@ -34,6 +34,8 @@ public class enviaPedido  extends AsyncTask<String, Void, String>{
     @Override
     public String doInBackground(String... arg0) {
         String id1 = arg0[0];
+        String email_login = arg0[1];
+        String id_mesa  = Main2Activity_mesas.cod_1_result;
 
 
 
@@ -43,8 +45,11 @@ public class enviaPedido  extends AsyncTask<String, Void, String>{
         String result;
 
         try {
-            data = "?id1=" + URLEncoder.encode(id1, "UTF-8");
+           // email_login_1 = new Main2Activity_scanner().getEmail_login();
 
+            data = "?id1=" + URLEncoder.encode(id1, "UTF-8");
+            data += "&email_login=" + URLEncoder.encode(email_login, "UTF-8");
+            data += "&id_mesa=" + URLEncoder.encode(id_mesa, "UTF-8");
 
             link = "http://192.168.100.136/db_1/pedido.php" + data;
             URL url = new URL(link);

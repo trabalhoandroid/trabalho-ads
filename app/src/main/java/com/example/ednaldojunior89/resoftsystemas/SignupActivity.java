@@ -8,6 +8,7 @@ package com.example.ednaldojunior89.resoftsystemas;
 /**
  * Created by Ednaldo Junior on 17/04/2018.
  */
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -77,7 +78,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
                 JSONObject jsonObj = new JSONObject(jsonStr);
                 String query_result = jsonObj.getString("query_result");
                 if (query_result.equals("SUCCESS")) {
-                    Toast.makeText(context, "Data inserted successfully. Signup successful.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Cadastro Realizado com Sucesso.", Toast.LENGTH_SHORT).show();
                 } else if (query_result.equals("FAILURE")) {
                     Toast.makeText(context, "Data could not be inserted. Signup failed.", Toast.LENGTH_SHORT).show();
                 } else {
@@ -91,4 +92,5 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
             Toast.makeText(context, "Couldn't get any JSON data.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

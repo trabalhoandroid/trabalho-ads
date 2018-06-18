@@ -1,5 +1,6 @@
 package com.example.ednaldojunior89.resoftsystemas;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,11 @@ public class AdapterListView extends BaseAdapter
         //ao item e definimos as informações.
         ((TextView) view.findViewById(R.id.tvNome)).setText(item.getNome());
         ((TextView) view.findViewById(R.id.tvTelefone)).setText(item.getTelefonne());
-
+        if (position % 2 == 1) {
+            view.setBackgroundColor( Color.rgb( 238, 221, 130 ));
+        } else {
+            view.setBackgroundColor(Color.rgb( 238, 201, 0 ));
+        }
 
         return view;
     }

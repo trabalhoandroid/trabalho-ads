@@ -8,12 +8,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,30 +31,40 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
 
     private AdapterListView adapterListView;
     private ListView listView;
+    //public String email_login;
+    public TextView mostrar;
+    public String email_login;
+
     String it;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_scanner);
-
+        mostrar = (TextView) findViewById( R.id.mostrar );
         //Pega a referencia do ListView
         listView = (ListView) findViewById(R.id.list);
         //Define o Listener quando alguem clicar no item.
         listView.setOnItemClickListener(this);
+
+
         createListView();
 
 
     }
 
 
-    private void createListView()
+    private void createListView ()
     {
+
+
 
         JSONObject postData = new JSONObject();
         try {
-            postData.put("usuario", "ednaldo");
+            email_login = Main2Activity_mesas.email_login;
+            postData.put("usuario", email_login);
             postData.put("senha", "123");
+            postData.put("mesa",  Main2Activity_mesas.cod_1_result);
 
             BuscarLista busca = new BuscarLista();
             busca.execute("http://192.168.100.136/db_1/lista.php", postData.toString());
@@ -66,22 +76,56 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
 
 
     }
+
+    public void setChama_comanda1(){
+        Intent intent = new Intent(Main2Activity_scanner.this, Comanda.class);
+        //SE O LOGIN E SENHA FOR IGUAL AO QUE CONSTA NA TABELA DO BANCO DE DADOS ENTÃO VAI PARA OUTRA TELA
+
+
+
+        //Collections.shuffle(array);
+        String texto = email_login;
+        Bundle bundle = new Bundle();
+        bundle.putString("guardainfo1", texto);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+
+
+        startActivity(intent);
+    }
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
     {
         //Pega o item que foi selecionado.
         Contato item = adapterListView.getItem(arg2);
         //Demostração
-        Toast.makeText(this, "Você Clicou em: " + item.getNome(), Toast.LENGTH_LONG).show();
-       it = item.getNome();
-        String id1 = it;
+        //Toast.makeText(this, "Você Clicou em: " + item.getNome(), Toast.LENGTH_LONG).show();
+         it = item.getNome();
 
 
-        Toast.makeText(this, "Signing up..." + id1, Toast.LENGTH_SHORT).show();
-        new enviaPedido (this).execute(id1);
-
-
+        onBackPressed();
 
     }
+
+    public void escolheitem(){
+        //String id1 = it;
+        Toast.makeText(this, "Signing up..." + it, Toast.LENGTH_SHORT).show();
+        new enviaPedido (this).execute(it ,email_login);
+    }
+
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Confirma "+it+" ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Main2Activity_scanner.this.escolheitem();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -167,7 +211,7 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
         @Override
         public void onPostExecute(String result) {
             super.onPostExecute(result);
-            Log.e("TAG", result); // this is expecting a response code to be sent from your server upon receiving the POST data
+           // Log.e("TAG", result); // this is expecting a response code to be sent from your server upon receiving the POST data
             if (progress.isShowing()) {
                 progress.dismiss();
             }
@@ -192,7 +236,7 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
 
                     for (int i = 0; i < lista.length(); i++) {
                         JSONArray objeto = lista.getJSONArray(i);
-                        Log.i("BUSCA ARRAY", objeto.getString(1));
+                       // Log.i("BUSCA ARRAY", objeto.getString(1));
                         Contato c = new Contato(objeto.getString(0),objeto.getString(1));
                         listar.add(c);
                     }
@@ -226,7 +270,7 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
             // 3. Get the AlertDialog from create()
             AlertDialog dialog = builder.create();
 
-            dialog.show();
+           // dialog.show();
 
         }
 
@@ -246,6 +290,8 @@ public class Main2Activity_scanner extends Activity implements AdapterView.OnIte
         startActivity(secondActivity);
 
     }
+
+
 
 }
 
